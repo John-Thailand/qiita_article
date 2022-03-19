@@ -26,5 +26,3 @@ class ArticlesPage extends HookWidget {
     );
   }
 }
-
-class HookWidget {}
