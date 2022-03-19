@@ -6,25 +6,28 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 class ArticleSearchSettingPage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final viewModel = ref.watch(articleViewModel);
+    final viewModel = ref.watch(articleViewModel.notifier);
     final state = ref.watch(articleViewModel.notifier).state;
-    
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('検索'),
+        title: const Text('検索'),
       ),
       body: Container(
-        padding: EdgeInsets.all(15.0),
+        padding: const EdgeInsets.all(15.0),
         child: Column(children: [
           TextFormField(
-              controller: TextEditingController(text: state.keyword),
-              textInputAction: TextInputAction.search,
-              decoration: InputDecoration(
-                hintText: 'キーワード',
-              ),
-              onFieldSubmitted: (value) async {
-                await viewModel.
-              })
+            controller: TextEditingController(text: state.keyword),
+            textInputAction: TextInputAction.search,
+            decoration: const InputDecoration(
+              hintText: 'キーワード',
+            ),
+            onFieldSubmitted: (value) async {
+              await viewModel.setQuery(value);
+              await viewModel.getArticles();
+              Navigator.of(context).pop();
+            },
+          ),
         ]),
       ),
     );
