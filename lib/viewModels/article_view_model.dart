@@ -28,7 +28,7 @@ class ArticleViewModel extends StateNotifier<ArticlesState> {
     final articles = await repository.fetchArticles(_page, state.keyword);
     final newArticles = [...state.articles, ...articles];
 
-    if (articles.lengh % 20 != 0 || articles.length == 0) {
+    if (articles.length % 20 != 0 || articles.length == 0) {
       state = state.copyWith(
         hasNext: false,
       );
