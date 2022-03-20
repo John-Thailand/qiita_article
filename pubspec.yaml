@@ -38,6 +38,8 @@ dependencies:
   freezed_annotation:
   json_annotation: ^4.4.0
   dio: ^4.0.4
+  intl: ^0.17.0
+  webview_flutter: ^3.0.1
 
 dev_dependencies:
   flutter_test:
