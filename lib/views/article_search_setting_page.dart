@@ -3,6 +3,7 @@ import 'package:qiita_article/viewModels/article_view_model.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
+// 記事詳細ページ
 class ArticleSearchSettingPage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
