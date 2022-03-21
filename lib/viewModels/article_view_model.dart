@@ -2,6 +2,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:qiita_article/repositories/article_repository.dart';
 import 'package:qiita_article/states/articles_state.dart';
 
+// 状態管理
 final articleViewModel = StateNotifierProvider(
   (_) => ArticleViewModel(
     ArticleRepository(),
